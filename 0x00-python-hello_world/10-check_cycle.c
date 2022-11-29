@@ -8,11 +8,11 @@
 
 int check_cycle(listint_t *list)
 {
-	listint_s *slow = list, *fast = list;
+	listint_t *slow = list, *fast = list;
 
 	if (!list || !list->next)
 		return (0);
-	while (slow && fast->next)
+	while (!slow && !fast->next)
 	{
 		slow = slow->next;
 		fast = fast->next->next;
