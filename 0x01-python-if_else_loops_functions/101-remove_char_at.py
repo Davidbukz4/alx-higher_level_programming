@@ -1,2 +1,3 @@
 #!/usr/bin/python3
-def
+def remove_char_at(str, n):
+    
