@@ -4,8 +4,7 @@ import sys
 
 def safe_function(fct, *args):
     try:
-        a, b = args
-        res = fct(a, b)
+        res = fct(*args)
     except ZeroDivisionError as err:
         sys.stderr.write("Exception: {}\n".format(err))
         res = None
