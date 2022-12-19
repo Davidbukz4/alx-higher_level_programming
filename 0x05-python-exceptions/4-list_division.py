@@ -16,6 +16,6 @@ def list_division(my_list_1, my_list_2, list_length):
             res = 0
         except Exception:
             res = 0
-        finally: 
+        finally:
             new_list.append(res)
     return new_list
