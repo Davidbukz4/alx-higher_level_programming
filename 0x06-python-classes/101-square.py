@@ -9,8 +9,8 @@ class Square():
         Args:
             size (int): size of square
         """
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
@@ -35,14 +35,23 @@ class Square():
     @position.setter
     def position(self, position):
         """Sets the position"""
-        if isinstance(position, tuple) and len(position) == 2:
-            if position[0] >= 0 and position[1] >= 0:
-                self.__position = position
-            else:
-                raise TypeError('position must be a tuple of 2 \
-                        positive integers')
+        flag = 0
+        if not isinstance(position, tuple):
+            raise TypeError("position must be a tuple of 2 positive integers")
+        elif (len(position) != 2):
+            raise TypeError("position must be a tuple of 2 positive integers")
         else:
-            raise TypeError('position must be a tuple of 2 positive integers')
+            for i in position:
+                if not isinstance(i, int):
+                    flag = 1
+                    raise TypeError("position must be a tuple\
+ of 2 positive integers")
+                elif i < 0:
+                    flag = 1
+                    raise TypeError("position must be a tuple\
+ of 2 positive integers")
+            if flag == 0:
+                self.__position = position
 
     def area(self):
         """Returns the current square area"""
@@ -50,18 +59,39 @@ class Square():
 
     def my_print(self):
         """Prints in stdout the square with the character #"""
-        if self.__size == 0:
+        if self.size == 0:
             print("")
         else:
-            a = self.__position[1]
+            a = self.position[1]
             while (a > 0):
                 print("")
                 a -= 1
-            for i in range(self.__size):
-                b = self.__position[0]
-                for k in range(self.__size):
+            for i in range(self.size):
+                b = self.position[0]
+                for k in range(self.size):
                     while (b > 0):
                         print(" ", end="")
                         b -= 1
                     print("{}".format('#'), end="")
                 print("")
+
+    def __str__(self):
+        """This method has the same behavior  as my_print()"""
+        word = ""
+        if (self.size == 0):
+            return (word)
+        else:
+            a = self.position[1]
+            while (a > 0):
+                word = word + "\n"
+                a -= 1
+            for i in range(self.size):
+                b = self.position[0]
+                for j in range(self.size):
+                    while(b > 0):
+                        word += " "
+                        b -= 1
+                    word += "#"
+                if (i < self.size - 1):
+                    word += "\n"
+            return word
