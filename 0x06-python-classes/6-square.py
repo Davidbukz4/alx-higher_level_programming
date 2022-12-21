@@ -35,12 +35,23 @@ class Square():
     @position.setter
     def position(self, position):
         """Sets the position"""
-        if (not isinstance(position, tuple) or len(position) != 2 or \
-            not all(isinstance(i, int) for i in position) or \
-            not all(num >= 0 for j in position)):
-            raise TypeError('position must be a tuple of 2 positive integers')
+        flag = 0
+        if not isinstance(value, tuple):
+            raise TypeError("position must be a tuple of 2 positive integers")
+        elif (len(value) != 2):
+            raise TypeError("position must be a tuple of 2 positive integers")
         else:
-             self.__position = position
+            for i in value:
+                if not isinstance(i, int):
+                    flag = 1
+                    raise TypeError("position must be a tuple\
+ of 2 positive integers")
+                elif i < 0:
+                    flag = 1
+                    raise TypeError("position must be a tuple\
+ of 2 positive integers")
+            if flag == 0:
+                self.__position = value
 
     def area(self):
         """Returns the current square area"""
