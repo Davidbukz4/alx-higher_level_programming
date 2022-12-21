@@ -58,8 +58,10 @@ class Square():
                 print("")
                 a -= 1
             for i in range(self.__size):
-                for j in range(self.__position[0]):
+                b = self.__position[0]
+                while (b > 0):
                     print(" ", end="")
+                    b -= 1
                 for k in range(self.__size):
                     print("{}".format('#'), end="")
                 print("")
