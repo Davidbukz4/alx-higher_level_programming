@@ -59,9 +59,9 @@ class Square():
                 a -= 1
             for i in range(self.__size):
                 b = self.__position[0]
-                while (b > 0):
-                    print(" ", end="")
-                    b -= 1
                 for k in range(self.__size):
+                    while (b > 0):
+                        print(" ", end="")
+                        b -= 1
                     print("{}".format('#'), end="")
                 print("")
