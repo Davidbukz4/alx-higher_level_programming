@@ -1,0 +1,16 @@
+The ``example`` module
+======================
+
+Using ``factorial``
+-------------------
+
+This an example text file in reStructuredText format. First import
+``factorial`` from the ``factorial`` module:
+
+    >>> from factorial import factorial
+
+Now use it:
+
+    >>> factorial(6)
+    120
+

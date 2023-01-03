@@ -1,0 +1,49 @@
+============================
+Doctest for 3-say_my_name.py
+============================
+
+``say_my_name()`` prints 'My name is <first name> <last name>.
+
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+    >>> say_my_name("John", "Smith")
+    My name is John Smith
+    >>> say_my_name("Bob") # doctest: +NORMALIZE_WHITESPACE
+    My name is Bob 
+    >>> say_my_name(12, "White")
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+    >>> say_my_name("White", 12)
+    Traceback (most recent call last):
+        ...
+    TypeError: last_name must be a string
+    >>> say_my_name()
+    Traceback (most recent call last):
+        ...
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+    >>> say_my_name(name, lName)
+    Traceback (most recent call last):
+        ...
+    NameError: name 'name' is not defined
+    >>> say_my_name('Dave', lName)
+    Traceback (most recent call last):
+        ...
+    NameError: name 'lName' is not defined
+    >>> say_my_name(33, 654)
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+    >>> say_my_name('Dave', '') # doctest: +NORMALIZE_WHITESPACE
+    My name is Dave 
+    >>> say_my_name("", "") # doctest: +NORMALIZE_WHITESPACE
+    My name is  
+    >>> say_my_name("", "Dave")
+    My name is  Dave
+    >>> say_my_name("Dave", None)
+    Traceback (most recent call last):
+        ...
+    TypeError: last_name must be a string
+    >>> say_my_name(None, "Dave")
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string

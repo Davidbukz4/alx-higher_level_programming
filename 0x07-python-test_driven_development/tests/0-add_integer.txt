@@ -1,0 +1,48 @@
+============================
+Doctest for 0-add_integer.py
+============================
+
+Integers and Floats
+===================
+``add_integer()`` returns the sum of two arguments.
+
+    >>> add_integer = __import__('0-add_integer').add_integer
+    >>> add_integer(1, 2)
+    3
+    >>> add_integer(100, -2)
+    98
+    >>> add_integer(2)
+    100
+    >>> add_integer(100.3, -2)
+    98
+    >>> add_integer(34.456, 23.0)
+    57
+    >>> add_integer(4, "School")
+    Traceback (most recent call last):
+        ...
+    TypeError: b must be an integer
+    >>> add_integer("str1", 45)
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+    >>> add_integer(int("21tr"), 45)
+    Traceback (most recent call last):
+        ...
+    ValueError: invalid literal for int() with base 10: '21tr'
+    >>> add_integer(None)
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+    >>> add_integer(float('inf'))
+    Traceback (most recent call last):
+        ...
+    OverflowError: cannot convert float infinity to integer
+    >>> add_integer(1e320, 96)
+    Traceback (most recent call last):
+        ...
+    OverflowError: cannot convert float infinity to integer
+    >>> add_integer(1e320, 5e400)
+    Traceback (most recent call last):
+        ...
+    OverflowError: cannot convert float infinity to integer
+
