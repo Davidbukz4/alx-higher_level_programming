@@ -15,6 +15,14 @@ Integers and Floats
     100
     >>> add_integer(100.3, -2)
     98
+    >>> add_integer(7.8, 9.5)
+    16
+    >>> add_integer(4.03, 3)
+    7
+    >>> add_integer(3, 6.4)
+    9
+    >>> add_integer(-100.3, -2)
+    -102
     >>> add_integer(34.456, 23.0)
     57
     >>> add_integer(4, "School")
