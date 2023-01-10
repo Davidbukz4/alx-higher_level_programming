@@ -26,10 +26,7 @@ class Rectangle(BaseGeometry):
     """A Rectangle class"""
     def __init__(self, width, height):
         """initializes a class"""
-        try:
-            self.integer_validator('width', width)
-            self.integer_validator('height', height)
-            self.__width = width
-            self.__height = height
-        except Exception as e:
-            raise e
+        self.integer_validator('width', width)
+        self.__width = width
+        self.integer_validator('height', height)
+        self.__height = height
