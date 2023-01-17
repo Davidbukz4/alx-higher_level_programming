@@ -96,8 +96,10 @@ class Rectangle(Base):
 
     def __str__(self):
         """Returns printable string for the class"""
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,\
-                self.x, self.y, self.width, self.height)
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(
+                self.id, self.x,
+                self.y, self.width, self.height
+        )
 
     def update(self, *args, **kwargs):
         """Assigns a key/value argument to each attribute"""
@@ -126,5 +128,5 @@ class Rectangle(Base):
         for key, value in self.__dict__.items():
             key = key.split('__')
             key = key[-1]
-            dic.update({key:value})
+            dic.update({key: value})
         return dic

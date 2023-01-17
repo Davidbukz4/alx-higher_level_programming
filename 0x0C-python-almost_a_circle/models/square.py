@@ -26,8 +26,10 @@ class Square(Rectangle):
 
     def __str__(self):
         """Returns a printable representation of the square"""
-        return "[Square] ({}) {}/{} - {}".format(self.id, self.x,\
-                self.y, self.width)
+        return "[Square] ({}) {}/{} - {}".format(
+                self.id, self.x,
+                self.y, self.width
+        )
 
     def update(self, *args, **kwargs):
         """Assigns key/value argument to attributes"""
@@ -57,5 +59,5 @@ class Square(Rectangle):
             key = key[-1]
             if key == 'width' or key == 'height':
                 key = 'size'
-            dic.update({key:value})
+            dic.update({key: value})
         return dic
