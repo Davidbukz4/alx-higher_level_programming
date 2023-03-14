@@ -3,13 +3,9 @@
 // rectangle using the character c
 // If c is undefined, use the character X
 
-const Rectangle = require('./4-rectangle');
+const Square1 = require('./5-square');
 
-class Square extends Rectangle {
-  constructor (size) {
-    super(size, size);
-  }
-
+class Square extends Square1 {
   charPrint (c = 'X') {
     let i;
     let rowString = '';
