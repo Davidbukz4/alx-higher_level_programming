@@ -10,16 +10,14 @@ class Square extends Rectangle {
     super(size, size);
   }
 
-  charPrint (c) {
+  charPrint (c = 'X') {
     let i;
-    if (c === undefined) {
-      for (i = 0; i < this.height; i++) {
-        console.log('X'.repeat(this.width));
-      }
-    } else {
-      for (i = 0; i < this.height; i++) {
-        console.log(c.repeat(this.width));
-      }
+    let rowString = '';
+    for (i = 0; i < this.width; i++) {
+      rowString += c;
+    }
+    for (i = 0; i < this.height; i++) {
+      console.log(rowString);
     }
   }
 }
