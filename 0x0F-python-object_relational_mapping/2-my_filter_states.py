@@ -21,7 +21,7 @@ if __name__ == '__main__':
         query = db.cursor()
 
         # execute MySQL queries
-        query.execute("SELECT * FROM states WHERE name='{}' \
+        query.execute("SELECT * FROM states WHERE name LIKE '{}' \
                       ORDER BY states.id ASC".format(sys.argv[4]))
 
         # obtain query
