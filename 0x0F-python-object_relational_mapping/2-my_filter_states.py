@@ -9,20 +9,20 @@ import sys
 import MySQLdb
 
 if __name__ == '__main__':
-    if (len(sys.argv) == 4):
+    if (len(sys.argv) == 5):
         uname = sys.argv[1]
         pwd = sys.argv[2]
         dbName = sys.argv[3]
         # connect to database
         db = MySQLdb.connect(host='localhost', user=uname, passwd=pwd,
-                             db=dbName, port=3306, charset="utf8")
+                             db=dbName, port=3306)
 
         # get a cursor
         query = db.cursor()
 
         # execute MySQL queries
-        query.execute("SELECT * FROM states WHERE name LIKE '{}' \
-                      ORDER BY states.id ASC".format(sys.argv[4]))
+        query.execute("SELECT * FROM states WHERE name='{}' ORDER BY id ASC"
+                      .format(sys.argv[4]))
 
         # obtain query
         data = query.fetchall()
