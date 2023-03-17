@@ -20,7 +20,7 @@ if __name__ == '__main__':
     query = db.cursor()
 
     # execute MySQL queries
-    query.execute("SELECT * FROM states WHERE name='{}' ORDER BY id ASC"
+    query.execute("SELECT * FROM states WHERE BINARY name='{}' ORDER BY id ASC"
                   .format(sys.argv[4]))
 
     # obtain query
