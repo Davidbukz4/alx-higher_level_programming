@@ -28,7 +28,7 @@ if __name__ == '__main__':
     if not(output):
         print('Nothing')
     else:
-        print('{}: {}'.format(x.id, x.name))
+        print('{}: {}'.format(data.id, data.name))
 
     # close the session
     seesion.close()
