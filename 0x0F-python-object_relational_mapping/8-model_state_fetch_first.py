@@ -31,4 +31,4 @@ if __name__ == '__main__':
         print('{}: {}'.format(data.id, data.name))
 
     # close the session
-    seesion.close()
+    session.close()

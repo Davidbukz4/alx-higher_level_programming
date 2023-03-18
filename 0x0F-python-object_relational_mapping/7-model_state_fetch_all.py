@@ -29,4 +29,4 @@ if __name__ == '__main__':
         print('{}: {}'.format(x.id, x.name))
 
     # close the session
-    seesion.close()
+    session.close()
