@@ -8,7 +8,8 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String
 
 # base class to inherit from
-Base = declarative_base() # it returns a class
+Base = declarative_base()  # it returns a class
+
 
 class State(Base):
     """ Class to run in ORM """
