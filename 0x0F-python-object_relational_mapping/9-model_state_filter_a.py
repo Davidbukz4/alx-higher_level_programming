@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
 Lists all state object from the database
+using sqlalchemy
 """
 import sys
 from sqlalchemy.orm import sessionmaker
