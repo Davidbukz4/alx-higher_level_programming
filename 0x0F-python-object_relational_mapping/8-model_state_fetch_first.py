@@ -24,7 +24,7 @@ if __name__ == '__main__':
     session = Session()
 
     # get data in order, returns the first record
-    data = session.query(State).order_by(State.id).first()
+    data = session.query(State).first()
     if not(output):
         print('Nothing')
     else:
