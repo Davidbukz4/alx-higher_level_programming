@@ -14,7 +14,7 @@ if __name__ == '__main__':
                            pool_pre_ping=True)
 
     # take the imported base class and create them in the database
-    Base.metadata.create_all(bind=engine)
+    Base.metadata.create_all(engine)
 
     # create a session maker
     Session = sessionmaker(bind=engine)  # it returns a class
@@ -23,7 +23,7 @@ if __name__ == '__main__':
     session = Session()
 
     # get data in order
-    data = session.query(State).order_by(states.id)
+    data = session.query(State).order_by(State.id)
     for x in data:
         print('{}: {}'.format(x.id, x.name))
 
