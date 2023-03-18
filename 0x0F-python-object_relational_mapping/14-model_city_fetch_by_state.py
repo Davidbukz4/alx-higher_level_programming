@@ -27,9 +27,6 @@ if __name__ == "__main__":
     data_out = session.query(State.name, City.id, City.name)\
                       .filter(State.id == City.state_id).order_by(City.id)
     for x in data_out:
-        session.delete(x)
-
-    # commit to database
-    session.commit()
+        print('{}: ({}) {}'.format(x[0], x[1], x[2]))
 
     session.close()
