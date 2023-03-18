@@ -5,7 +5,7 @@ State model
 
 
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import creative_engine, Column, Integer, String
+from sqlalchemy import Column, Integer, String
 
 # base class to inherit from
 Base = declarative_base() # it returns a class
