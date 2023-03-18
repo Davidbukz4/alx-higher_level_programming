@@ -24,8 +24,7 @@ if __name__ == "__main__":
     session = Session()
 
     # get data in order, but return the first
-    data = session.query(State).order_by(State.id)
-    .filter(State.name.like('%a%'))
+    data = session.query(State).filter(State.name.like('%a%'))
     for x in data:
         print("{}: {}".format(x.id, x.name))
     session.close()
