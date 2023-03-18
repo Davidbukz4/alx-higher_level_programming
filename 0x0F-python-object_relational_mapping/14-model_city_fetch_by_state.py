@@ -25,8 +25,7 @@ if __name__ == "__main__":
     session = Session()
 
     # get data in order, but return the first
-    data_out = session.query(State.name, City.id, City.name)\
-                      .filter(State.id == City.state_id).order_by(City.id)
+    data_out = session.query(State.name, City.id, City.name).filter(State.id == City.state_id).order_by(City.id)
     for x in data_out:
         print('{}: ({}) {}'.format(x[0], x[1], x[2]))
 
