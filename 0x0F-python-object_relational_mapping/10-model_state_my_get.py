@@ -24,7 +24,7 @@ if __name__ == "__main__":
     session = Session()
 
     # get data in order, but return the first
-    data = session.query(State).filter(State.name==(sys.argv[4],))
+    data = session.query(State).filter(State.name == (sys.argv[4],))
     if not(data.first()):
         print('Not found')
     else:
