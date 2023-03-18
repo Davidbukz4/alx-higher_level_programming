@@ -25,7 +25,9 @@ if __name__ == '__main__':
 
     # get data in order, returns the first record
     data = session.query(State).order_by(State.id).first()
-    for x in data:
+    if not(output):
+        print('Nothing')
+    else:
         print('{}: {}'.format(x.id, x.name))
 
     # close the session
