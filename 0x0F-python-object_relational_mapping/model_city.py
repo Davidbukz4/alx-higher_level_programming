@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """
-class to use in call of ORM
-this class is going to have a Foreignkey from class State
+City class
 """
 from sqlalchemy import ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
@@ -11,7 +10,7 @@ from model_state import Base, State
 
 class City(Base):
     """
-    class that is going to run in the ORM
+    class to run in the ORM
     """
     __tablename__ = 'cities'
     id = Column(Integer, primary_key=True, autoincrement=True,
