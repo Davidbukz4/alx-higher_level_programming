@@ -30,7 +30,7 @@ if __name__ == "__main__":
     session.add(data_in)
 
     # get data in order, but return the first
-    data_out = session.query(State).filter(State.name == 'Louisiana').first()
+    data_out = session.query(State).filter(State.name == 'Louisiana')
     for x in data_out:
         print("{}".format(x.id))
 
