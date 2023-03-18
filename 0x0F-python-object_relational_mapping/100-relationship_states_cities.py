@@ -19,7 +19,7 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
 
     # create a session maker
-    Session = sessionmaker(bind=engine)  # it returns a class
+    Session = sessionmaker(bind=engine)  # it returns a clas
 
     # make an instance of the session class
     session = Session()
