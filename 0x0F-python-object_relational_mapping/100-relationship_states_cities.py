@@ -6,8 +6,8 @@ using sqlalchemy
 import sys
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import (create_engine)
-from model_state import Base, State
-from model_city import City
+from relationship_state import Base, State
+from relationship_city import City
 
 if __name__ == "__main__":
     # creates an engine that connects to the database
