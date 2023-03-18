@@ -8,19 +8,24 @@ from sqlalchemy import (create_engine)
 from model_state import Base, State
 
 if __name__ == "__main__":
+    # 
     engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
                            .format(sys.argv[1], sys.argv[2], sys.argv[3]),
                            pool_pre_ping=True)
+
+    # take the imported base class and create them in the database
     Base.metadata.create_all(engine)
-    Session = sessionmaker(bind=engine)
-    # lets create a Session object
-    ses = Session()
-    # in this case output is going to be an element
-    # because we are using first() method that return the first
-    # element of the result of the query
-    output = ses.query(State).order_by(State.id).first()
-    if not (output):
+
+    # create a session maker
+    Session = sessionmaker(bind=engine)  # it returns a class
+
+    # make an instance of the session class
+    session = Session()
+
+    # get data in order, but return the first
+    data = session.query(State).order_by(State.id).first()
+    if not (data):
         print("Nothing")
     else:
-        print("{}: {}".format(output.id, output.name))
-    ses.close()
+        print("{}: {}".format(data.id, data.name))
+    session.close()
