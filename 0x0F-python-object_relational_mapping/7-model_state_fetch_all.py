@@ -1,0 +1,31 @@
+#!/usr/bin/python3
+"""
+Lists all state object from the database
+"""
+from sqlalchemy.orm import sessionmaker
+from sqlalchemy import create_engine
+from model_state import Base, State
+
+
+if __name__ == '__main__':
+    # create an engine that connects to the database
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
+                           .format(sys.argv[1], sys.argv[2], sys.argv[3]),
+                           pool_pre_ping=True)
+
+    # take the imported base class and create them in the database
+    Base.metadata.create_all(bind=engine)
+
+    # create a session maker
+    Session = sessionmaker(bind=engine)  # it returns a class
+
+    # make an instance of the Session class
+    session = Session()
+
+    # get data in order
+    data = session.query(State).order_by(states.id)
+    for x in data:
+        print('{}: {}'.format(x.id, x.name))
+
+    # close the session
+    seesion.close()
