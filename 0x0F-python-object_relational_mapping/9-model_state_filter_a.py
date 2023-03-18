@@ -26,10 +26,8 @@ if __name__ == '__main__':
     # get data in order, returns the first record
     data = session.query(State).order_by(State.id)
     .filter(State.name.like('%a%'))
-    if not(data):
-        print('Nothing')
-    else:
-        print('{}: {}'.format(data.id, data.name))
+    for x in data:
+        print('{}: {}'.format(x.id, x.name))
 
     # close the session
     session.close()
