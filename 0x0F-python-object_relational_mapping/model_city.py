@@ -1,19 +1,20 @@
 #!/usr/bin/python3
 """
-City model
+class to use in call of ORM
+this class is going to have a Foreignkey from class State
 """
-
-
+from sqlalchemy import ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import Column, Integer, String, ForeignKey
+from sqlalchemy import Column, Integer, String
 from model_state import Base, State
 
 
 class City(Base):
-    """ Class to run in ORM """
+    """
+    class that is going to run in the ORM
+    """
     __tablename__ = 'cities'
-
-    id = Column(Integer, unique=True, primary_key=True,
-                autoincrement=True, nullable=False)
+    id = Column(Integer, primary_key=True, autoincrement=True,
+                nullable=False, unique=True)
     name = Column(String(128), nullable=False)
-    state_id = Column(Integer, nullable=False, ForeignKey('states.id'))
+    state_id = Column(Integer, ForeignKey('states.id'), nullable=False)
