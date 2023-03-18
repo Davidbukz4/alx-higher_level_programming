@@ -21,7 +21,7 @@ if __name__ == '__main__':
         query = db.cursor()
 
         # execute MySQL queries
-        query.execute("""SELECT * FROM states WHERE name
+        query.execute("""SELECT * FROM states WHERE BINARY name
                       LIKE 'N%' ORDER BY states.id ASC""")
 
         # obtain query
