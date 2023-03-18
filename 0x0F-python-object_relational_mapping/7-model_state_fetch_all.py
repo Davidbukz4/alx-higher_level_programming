@@ -2,6 +2,7 @@
 """
 Lists all state object from the database
 """
+import sys
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import (create_engine)
 from model_state import Base, State
