@@ -1,0 +1,15 @@
+#!/usr/bin/python3
+"""
+A script taht fetches from https://alx-intrabet.hbtn.io/status
+using request module
+"""
+
+if __name__ == '__main__':
+    import requests
+    import sys
+
+    try:
+        req = requests.get(sys.argv[1])
+        print(req.text)
+    except requests.exceptions.HTTPError as e:
+        print('Error code: {}'.format(e.status_code))
