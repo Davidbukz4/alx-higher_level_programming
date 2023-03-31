@@ -8,5 +8,5 @@ if __name__ == '__main__':
     import requests
     import sys
 
-    req = requests.get('https://alx-intranet.hbtn.io/status')
+    req = requests.get(sys.argv[1])
     print(req.headers['X-Request-Id'])
